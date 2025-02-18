@@ -25,7 +25,7 @@ class Indices {
         return this.models;
     }
 
-    async get(model) {
+    async getURL(model) {
         // Check if this.models is empty
         if (Object.keys(this.models).length === 0) {
             await this.list();
@@ -55,7 +55,7 @@ class Indices {
             return success('Local path exists');
         }
 
-        const url = await this.get(model);
+        const url = await this.getURL(model);
 
         if (!url) {
             return error(`Model ${model} not found`);
