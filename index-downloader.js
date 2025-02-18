@@ -6,6 +6,10 @@ class Indices {
         this.models = {};
     }
 
+    /**
+     * Lists all available models from the Vosk website.
+     * @returns {Promise<Object>} A promise that resolves to an object containing model names and their URLs.
+     */
     async list() {
         // If this.models is not empty, return it
         if (Object.keys(this.models).length > 0) {
@@ -25,6 +29,11 @@ class Indices {
         return this.models;
     }
 
+    /**
+     * Gets the URL of a specific model.
+     * @param {string} model - The name of the model.
+     * @returns {Promise<string|null>} A promise that resolves to the URL of the model or null if not found.
+     */
     async getURL(model) {
         // Check if this.models is empty
         if (Object.keys(this.models).length === 0) {
@@ -35,6 +44,12 @@ class Indices {
         return this.models[model] || null;
     }
 
+    /**
+     * Downloads a specific model to the local path.
+     * @param {string} model - The name of the model.
+     * @param {string} localPath - The local path to save the downloaded model.
+     * @returns {Promise<Object>} A promise that resolves to an object containing the success status and message.
+     */
     async download(model, localPath) {
         const success = message => {
             return {
