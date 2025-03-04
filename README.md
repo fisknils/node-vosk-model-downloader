@@ -44,41 +44,8 @@ download('vosk-model-small-tg-0.22', 'vosk-model-small-tg-0.22.zip').then(result
 
 **Note:** When using `download(model, localPath)`, if the `localPath` already exists, it will not be overwritten.
 
-### Example Scripts
-
-You can find example scripts in the `examples` directory.
-
-#### List Models
-
-```javascript
-import { list } from 'vosk-model-downloader';
-
-list().then(models => {
-    console.log('Available models:');
-    console.log(models);
-}).catch(error => {
-    console.error('Failed to list models:', error.message);
-});
-```
-
-#### Download Model
-
-```javascript
-import { download } from 'vosk-model-downloader';
-
-download('vosk-model-small-tg-0.22', 'vosk-model-small-tg-0.22.zip').then(result => {
-    if (result.success) {
-        console.log(result.message);
-    } else {
-        console.error(result.message);
-    }
-});
-```
-
-## License
-
-This project is licensed under the MIT License.
+# License
+MIT
 
 ## Repository
-
 For more information, visit the [GitHub repository](https://github.com/fisknils/vosk-model-downloader).
